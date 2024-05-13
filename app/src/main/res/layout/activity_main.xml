@@ -9,60 +9,71 @@
 
     <Button
         android:id="@+id/addp1"
-        android:layout_width="411dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="202dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="+"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/subp1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textp1" />
 
     <Button
         android:id="@+id/subp1"
-        android:layout_width="411dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="2dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="-"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addp1" />
 
     <Button
         android:id="@+id/addp2"
-        android:layout_width="411dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="+"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textp2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/subp2" />
 
     <Button
         android:id="@+id/subp2"
-        android:layout_width="411dp"
-        android:layout_height="200dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="-"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/addp2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textp1"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="399dp"
         android:text="Player 1: 40"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/addp1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textp2" />
 
     <TextView
         android:id="@+id/textp2"
 
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginTop="402dp"
         android:text="Player 2: 40"
+        app:layout_constraintBottom_toTopOf="@+id/textp1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/addp2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
