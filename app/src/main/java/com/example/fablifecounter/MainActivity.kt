@@ -10,10 +10,10 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var textp1 : TextView
+    private lateinit var healthtextp1 : TextView
     private lateinit var addp1 : Button
     private lateinit var subp1 : Button
-    private lateinit var textp2 : TextView
+    private lateinit var healthtextp2 : TextView
     private lateinit var addp2 : Button
     private lateinit var subp2 : Button
 
@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        textp1 = findViewById(R.id.textp1)
+        healthtextp1 = findViewById(R.id.healthtextp1)
         addp1 = findViewById(R.id.addp1)
         subp1 = findViewById(R.id.subp1)
-        textp2 = findViewById(R.id.textp2)
+        healthtextp2 = findViewById(R.id.healthtextp2)
         addp2 = findViewById(R.id.addp2)
         subp2 = findViewById(R.id.subp2)
 
@@ -36,28 +36,28 @@ class MainActivity : AppCompatActivity() {
 
             healthp1 += 1
 
-            textp1.text = "Player 1: " + healthp1.toString()
+            healthtextp1.text = healthp1.toString()
         }
 
         subp1.setOnClickListener {
 
             healthp1 -= 1
 
-            textp1.text = "Player 1: " + healthp1.toString()
+            healthtextp1.text = healthp1.toString()
         }
 
         addp2.setOnClickListener {
 
             healthp2 += 1
 
-            textp2.text = "Player 2: " + healthp2.toString()
+            healthtextp2.text = healthp2.toString()
         }
 
         subp2.setOnClickListener {
 
             healthp2 -= 1
 
-            textp2.text = "Player 2: " + healthp2.toString()
+            healthtextp2.text = healthp2.toString()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

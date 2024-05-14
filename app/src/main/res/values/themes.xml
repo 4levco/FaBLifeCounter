@@ -6,4 +6,15 @@
     </style>
 
     <style name="Theme.FaBLifeCounter" parent="Base.Theme.FaBLifeCounter" />
+    
+    <style name="MyText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">30sp</item>
+        <item name="android:paddingLeft">4sp</item>
+        <item name="android:paddingBottom">4sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
 </resources>
