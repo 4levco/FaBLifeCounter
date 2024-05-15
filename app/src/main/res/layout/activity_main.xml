@@ -7,26 +7,60 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/backgroundp2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:paddingTop="100dp"
+            android:rotation="180"
+            android:scaleType="centerCrop"
+            android:src="@drawable/hero_bravo" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/cardview_dark_background" />
+
+        <ImageView
+            android:id="@+id/backgroundp1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:paddingTop="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/hero_dorinthea" />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/addp1"
+        style="@style/MyText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
         android:text="+"
-        style="@style/MyText"
+        app:iconPadding="0dp"
         app:layout_constraintBottom_toTopOf="@+id/subp1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textp1" />
+        app:layout_constraintTop_toBottomOf="@+id/addp2" />
 
     <Button
         android:id="@+id/subp1"
+        style="@style/MyText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
         android:text="-"
-        style="@style/MyText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -35,12 +69,12 @@
 
     <Button
         android:id="@+id/addp2"
+        style="@style/MyText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
         android:text="+"
-        style="@style/MyText"
-        app:layout_constraintBottom_toTopOf="@+id/textp2"
+        app:layout_constraintBottom_toTopOf="@+id/addp1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,11 +82,11 @@
 
     <Button
         android:id="@+id/subp2"
+        style="@style/MyText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
         android:text="-"
-        style="@style/MyText"
         app:layout_constraintBottom_toTopOf="@+id/addp2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -60,34 +94,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textp1"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:text="Player 1"
-        app:layout_constraintBottom_toTopOf="@+id/addp1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textp2" />
-
-    <TextView
-        android:id="@+id/textp2"
-
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:text="Player 2"
-        android:rotation="180"
-        app:layout_constraintBottom_toTopOf="@+id/textp1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addp2" />
-
-    <TextView
         android:id="@+id/healthtextp1"
+        style="@style/MyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="40"
-        style="@style/MyText"
         app:layout_constraintBottom_toTopOf="@+id/subp1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,12 +107,12 @@
 
     <TextView
         android:id="@+id/healthtextp2"
+        style="@style/MyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="40"
-        style="@style/MyText"
         android:rotation="180"
+        android:text="40"
         app:layout_constraintBottom_toTopOf="@+id/addp2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -5,16 +5,18 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.FaBLifeCounter" parent="Base.Theme.FaBLifeCounter" />
-    
+    <style name="Theme.FaBLifeCounter" parent="Base.Theme.FaBLifeCounter" >
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
     <style name="MyText" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">50sp</item>
         <item name="android:paddingLeft">4sp</item>
         <item name="android:paddingBottom">4sp</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:shadowColor">#000000</item>
-        <item name="android:shadowDx">2</item>
-        <item name="android:shadowDy">2</item>
-        <item name="android:shadowRadius">1</item>
+        <item name="android:shadowDx">5</item>
+        <item name="android:shadowDy">5</item>
+        <item name="android:shadowRadius">3</item>
     </style>
 </resources>
