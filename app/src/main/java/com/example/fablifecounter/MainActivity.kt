@@ -23,10 +23,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var addp2 : Button
     private lateinit var subp2 : Button
 
+    private lateinit var imageViewP1: ImageView
+    private lateinit var imageViewP2: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        imageViewP1 = findViewById(R.id.backgroundp1)
+        imageViewP2 = findViewById(R.id.backgroundp2)
 
         healthtextp1 = findViewById(R.id.healthtextp1)
         addp1 = findViewById(R.id.addp1)
@@ -66,33 +72,32 @@ class MainActivity : AppCompatActivity() {
             healthtextp2.text = healthp2.toString()
         }
 
-        private fun showImageSelectionDialog() {
+        val menuButton = findViewById<ImageButton>(R.id.menu)
+
+        fun showHeroSelectionDialog() {
             val fragmentManager = supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val imageSelectionFragment = ImageSelectionFragment()
+            val fragment = imageSelectionFragment
             fragmentTransaction.replace(R.id.fragment_container, imageSelectionFragment)
             fragmentTransaction.addToBackStack(null)
+            fragment.listener = this
             fragmentTransaction.commit()
         }
 
-        val menuButton = findViewById<ImageButton>(R.id.menu)
-
         menuButton.setOnClickListener {
             val popupMenu = PopupMenu(this, menuButton)
-            val inflater = menuInflater
-            inflater.inflate(R.menu.change_hero, popupMenu.menu)
 
-            popupMenu.setOnMenuItemClickListener { menuItem ->
-                val itemId = menuItem.itemId
-                if (itemId == R.id.change_hero) {
-                    showImageSelectionDialog()
-                    return@setOnMenuItemClickListener true
-                }
-
-                false
+            popupMenu.menu.add("Hero Selection").setOnMenuItemClickListener { menuItem ->
+                showHeroSelectionDialog()
+                true
             }
-
             popupMenu.show()
+        }
+
+
+        fun onHeroSelected(heroImageResourceId: Int) {
+            imageViewP1.setImageResource(heroImageResourceId)
         }
 
         /*
