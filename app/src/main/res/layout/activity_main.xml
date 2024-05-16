@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/healthp1_value"
+        android:text="40"
         app:layout_constraintBottom_toTopOf="@+id/subp1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,24 +123,10 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@android:color/transparent"
-        android:rotation="90"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@android:drawable/ic_menu_more" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
