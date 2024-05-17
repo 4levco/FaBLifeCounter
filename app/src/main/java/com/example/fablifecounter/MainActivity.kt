@@ -1,22 +1,25 @@
 package com.example.fablifecounter
 
-import android.media.Image
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
+import android.widget.GridLayout
+import android.widget.GridView
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.PopupMenu
+import android.widget.TableLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.helper.widget.Flow
+import androidx.constraintlayout.widget.VirtualLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.internal.FlowLayout
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var healthtextp1 : TextView
     private lateinit var addp1 : Button
     private lateinit var subp1 : Button
@@ -24,6 +27,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var addp2 : Button
     private lateinit var subp2 : Button
     private lateinit var menuButton: ImageButton
+
+    val heroOptions = mapOf(
+        "Bravo" to  R.drawable.icon_bravo,
+        "Dorinthea" to R.drawable.icon_dorinthea,
+        "Katsu" to R.drawable.icon_katsu,
+        "Rhinar" to R.drawable.icon_rhinar
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,30 +52,22 @@ class MainActivity : AppCompatActivity() {
         var healthp2 = 40
 
         addp1.setOnClickListener {
-
             healthp1 += 1
-
             healthtextp1.text = healthp1.toString()
         }
 
         subp1.setOnClickListener {
-
             healthp1 -= 1
-
             healthtextp1.text = healthp1.toString()
         }
 
         addp2.setOnClickListener {
-
             healthp2 += 1
-
             healthtextp2.text = healthp2.toString()
         }
 
         subp2.setOnClickListener {
-
             healthp2 -= 1
-
             healthtextp2.text = healthp2.toString()
         }
 
@@ -88,15 +90,16 @@ class MainActivity : AppCompatActivity() {
                 popupMenu.menu.add(option)
             }
 
-
         popupMenu.setOnMenuItemClickListener { menuItem ->
-            val itemId = menuItem.itemId
-            when (itemId) {
-                R.id.menu_choose_hero -> {
-                    //to-do choose hero
+            val itemID = menuItem.itemId
+            when (itemID) {
+                0 -> {
+                    setContentView(R.layout.hero_selection)
+                    heroSelection()
+                    invalidateMenu()
                     true
                 }
-                R.id.menu_options -> {
+                1 -> {
                     //to-do options
                     true
                 }
@@ -104,9 +107,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
         popupMenu.show()
+    }
 
+    private fun heroSelection() {
+        val gridLayout: GridLayout = findViewById(R.id.gridLayout)
+
+        heroOptions.forEach{ entry ->
+            val heroOption: View = View.inflate(this, R.layout.hero_image, null)
+
+            val heroImage: ImageButton = heroOption.findViewById(R.id.heroImage)
+            heroImage.setImageResource(entry.value)
+
+            gridLayout.addView(heroOption)
+        }
+
+        gridLayout.invalidate()
     }
 }

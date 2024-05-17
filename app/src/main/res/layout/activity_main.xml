@@ -124,9 +124,9 @@
         android:layout_height="50dp"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_more"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@android:drawable/ic_menu_more" />
-
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
