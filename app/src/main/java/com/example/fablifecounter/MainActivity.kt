@@ -88,8 +88,6 @@ class MainActivity : AppCompatActivity() {
             when (itemID) {
                 0 -> {
                     startActivity(Intent(this, HeroSelection::class.java))
-                    //setContentView(R.layout.hero_selection)
-                    //heroSelection()
                     invalidateMenu()
                     true
                 }
@@ -103,51 +101,4 @@ class MainActivity : AppCompatActivity() {
 
         popupMenu.show()
     }
-
-    /*
-    private fun heroSelection() {
-        val gridLayout: GridLayout = findViewById(R.id.gridLayout)
-
-        heroOptions.forEach{ entry ->
-            val heroOption: View = View.inflate(this, R.layout.hero_icon, null)
-            val heroIcon: ImageButton = heroOption.findViewById(R.id.heroIcon)
-            heroIcon.setImageResource(entry.value)
-
-            gridLayout.addView(heroOption)
-
-            heroIcon.setOnClickListener {
-                setContentView(R.layout.selected_hero)
-
-                val selectedHeroLayout: ConstraintLayout = findViewById(R.id.selectedHeroLayout)
-                val selectedHero: View = View.inflate(this, R.layout.hero_image, null)
-                val heroImage: ImageView = selectedHero.findViewById(R.id.heroImage)
-                heroImage.setImageResource(entry.value)
-
-                selectedHeroLayout.addView(selectedHero)
-
-                val selectP1: Button = findViewById(R.id.selectP1)
-                val selectP2: Button = findViewById(R.id.selectP2)
-                val cancel: Button = findViewById(R.id.cancel)
-
-                selectP1.setOnClickListener {
-                    //to-do selectp1
-                    val mainView: View = View.inflate(this, R.layout.activity_main, null)
-                    val imageViewP1: ImageView = mainView.findViewById(R.id.backgroundp1)
-                    imageViewP1.setImageResource(entry.value)
-                }
-
-                selectP2.setOnClickListener {
-                    //to-do selectp2
-                }
-
-                cancel.setOnClickListener {
-                    //to-do close view
-                }
-            }
-        }
-
-        gridLayout.invalidate()
-    }
-
-     */
 }

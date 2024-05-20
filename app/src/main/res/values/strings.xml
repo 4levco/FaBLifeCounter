@@ -5,4 +5,9 @@
         <item>Choose Hero</item>
         <item>Options</item>
     </string-array>
+
+    <string-array name="hero_selection_options">
+        <item>Select Player 1</item>
+        <item>Select Player 2</item>
+    </string-array>
 </resources>
