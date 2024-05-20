@@ -1,6 +1,8 @@
 package com.example.fablifecounter
 
 import android.app.Activity
+import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.View
@@ -17,12 +19,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    val heroOptions = mapOf(
-        "Bravo" to  R.drawable.hero_bravo,
-        "Dorinthea" to R.drawable.hero_dorinthea,
-        "Katsu" to R.drawable.hero_katsu,
-        "Rhinar" to R.drawable.hero_rhinar
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +32,17 @@ class MainActivity : AppCompatActivity() {
         val addp2: Button = findViewById(R.id.addp2)
         val subp2: Button = findViewById(R.id.subp2)
         val menuButton: ImageButton = findViewById(R.id.menu)
+        val backgroundP1: ImageView = findViewById(R.id.backgroundp1)
+        val backgroundP2: ImageView = findViewById(R.id.backgroundp2)
 
         var healthp1 = 40
         var healthp2 = 40
+
+        val newImageInfo1 = intent.getIntExtra("newImageInfo1", 0)
+        backgroundP1.setImageResource(newImageInfo1)
+
+        val newImageInfo2 = intent.getIntExtra("newImageInfo2", 0)
+        backgroundP2.setImageResource(newImageInfo2)
 
         addp1.setOnClickListener {
             healthp1 += 1
@@ -83,8 +87,9 @@ class MainActivity : AppCompatActivity() {
             val itemID = menuItem.itemId
             when (itemID) {
                 0 -> {
-                    setContentView(R.layout.hero_selection)
-                    heroSelection()
+                    startActivity(Intent(this, HeroSelection::class.java))
+                    //setContentView(R.layout.hero_selection)
+                    //heroSelection()
                     invalidateMenu()
                     true
                 }
@@ -99,6 +104,7 @@ class MainActivity : AppCompatActivity() {
         popupMenu.show()
     }
 
+    /*
     private fun heroSelection() {
         val gridLayout: GridLayout = findViewById(R.id.gridLayout)
 
@@ -136,11 +142,12 @@ class MainActivity : AppCompatActivity() {
 
                 cancel.setOnClickListener {
                     //to-do close view
-                    //setContentView(MainActivity)
                 }
             }
         }
 
         gridLayout.invalidate()
     }
+
+     */
 }
