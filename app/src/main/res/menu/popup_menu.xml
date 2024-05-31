@@ -3,7 +3,4 @@
     <item
         android:id="@+id/menu_choose_hero"
         android:title="Choose Hero" />
-    <item
-        android:id="@+id/menu_options"
-        android:title="Options" />
 </menu>

@@ -1,31 +1,35 @@
 package com.example.fablifecounter
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Im
-import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.PopupMenu
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class HeroSelection : AppCompatActivity() {
     private val heroOptions = mapOf(
+        "Azalea" to R.drawable.hero_azalea,
+        "Boltyn" to R.drawable.hero_boltyn,
         "Bravo" to  R.drawable.hero_bravo,
+        "Briar" to R.drawable.hero_briar,
+        "Chane" to R.drawable.hero_chane,
+        "Dash" to R.drawable.hero_dash,
         "Dorinthea" to R.drawable.hero_dorinthea,
+        "Kano" to R.drawable.hero_kano,
         "Katsu" to R.drawable.hero_katsu,
-        "Rhinar" to R.drawable.hero_rhinar
+        "Levia" to R.drawable.hero_levia,
+        "Lexi" to R.drawable.hero_lexi,
+        "Oldhim" to R.drawable.hero_oldhim,
+        "Prism" to R.drawable.hero_prism,
+        "Rhinar" to R.drawable.hero_rhinar,
+        "Viserai" to R.drawable.hero_viserai
     )
 
     private var selectedHero1: Int? = null
@@ -85,7 +89,6 @@ class HeroSelection : AppCompatActivity() {
             }
 
             cancel.setOnClickListener {
-                //startActivity(intent)
                 if (selectedHero1 != null) {
                     intent.putExtra("newImageInfo1", selectedHero1)
                 }

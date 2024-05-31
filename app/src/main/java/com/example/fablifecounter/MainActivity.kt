@@ -1,20 +1,15 @@
 package com.example.fablifecounter
 
-import android.app.Activity
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.View
 import android.widget.Button
-import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -83,16 +78,12 @@ class MainActivity : AppCompatActivity() {
                 popupMenu.menu.add(option)
             }
 
-        popupMenu.setOnMenuItemClickListener { menuItem ->
-            val itemID = menuItem.itemId
-            when (itemID) {
+        popupMenu.setOnMenuItemClickListener { item ->
+            val selectedItem = item.itemId
+            when (selectedItem) {
                 0 -> {
                     startActivity(Intent(this, HeroSelection::class.java))
                     invalidateMenu()
-                    true
-                }
-                1 -> {
-                    //to-do options
                     true
                 }
                 else -> false

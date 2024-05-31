@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">FaB Life Counter</string>
+    <string name="app_name">FaB Life-Counter</string>
 
     <string-array name="popup_menu_options">
         <item>Choose Hero</item>
-        <item>Options</item>
     </string-array>
 
     <string-array name="hero_selection_options">
